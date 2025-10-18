@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Номер" id="1">
+			<DataPath>Объект.Number</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Дата" id="4">
+			<DataPath>Объект.Date</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="БрокерскийСчёт" id="7">
+			<DataPath>Объект.БрокерскийСчёт</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="БрокерскийСчётКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="БрокерскийСчётРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<Table name="Акции" id="10">
+			<Representation>List</Representation>
+			<Footer>true</Footer>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Акции</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="АкцииКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="АкцииКоманднаяПанель" id="12"/>
+			<ExtendedTooltip name="АкцииРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="АкцииСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>Акции</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="АкцииСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="АкцииСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="АкцииСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>Акции</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="АкцииСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="АкцииСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="АкцииУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>Акции</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="АкцииУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="АкцииУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="АкцииНомерСтроки" id="23">
+					<DataPath>Объект.Акции.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="АкцииНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="АкцииНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<InputField name="АкцииАкция" id="26">
+					<DataPath>Объект.Акции.Акция</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="АкцииАкцияКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="АкцииАкцияРасширеннаяПодсказка" id="28"/>
+					<Events>
+						<Event name="OnChange">АкцииАкцияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="АкцииКоличествоЛотов" id="29">
+					<DataPath>Объект.Акции.КоличествоЛотов</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.Акции.TotalКоличествоЛотов</FooterDataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="АкцииКоличествоЛотовКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="АкцииКоличествоЛотовРасширеннаяПодсказка" id="31"/>
+					<Events>
+						<Event name="OnChange">АкцииКоличествоЛотовПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="АкцииЦена" id="32">
+					<DataPath>Объект.Акции.Цена</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="АкцииЦенаКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="АкцииЦенаРасширеннаяПодсказка" id="34"/>
+					<Events>
+						<Event name="OnChange">АкцииЦенаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="АкцииКоличествоАкций" id="35">
+					<DataPath>Объект.Акции.КоличествоАкций</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.Акции.TotalКоличествоАкций</FooterDataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="АкцииКоличествоАкцийКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="АкцииКоличествоАкцийРасширеннаяПодсказка" id="37"/>
+					<Events>
+						<Event name="OnChange">АкцииКоличествоАкцийПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="АкцииСумма" id="38">
+					<DataPath>Объект.Акции.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.Акции.TotalСумма</FooterDataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="АкцииСуммаКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="АкцииСуммаРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="АкцииКомиссия" id="47">
+					<DataPath>Объект.Акции.Комиссия</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.Акции.TotalКомиссия</FooterDataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="АкцииКомиссияКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="АкцииКомиссияРасширеннаяПодсказка" id="49"/>
+				</InputField>
+				<InputField name="АкцииПартия" id="41">
+					<DataPath>1/0:c81765fd-c469-452d-8e99-cf380768e0fa/0:8d7a4378-875e-461f-8016-317e015be759</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="АкцииПартияКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="АкцииПартияРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="АкцииШаги" id="44">
+					<DataPath>Объект.Акции.Уровень</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Акция</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Items.Акции.CurrentData.Акция</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="АкцииШагиКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="АкцииШагиРасширеннаяПодсказка" id="46"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ПродажаАкций</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+</Form>
